@@ -1,0 +1,19 @@
+{
+  "name": "snapcommit",
+  "version": "2.0.0",
+  "bin": {
+    "gitbot": "bin/gitbot.js"
+  },
+  "dependencies": {
+    "commander": "^10.0.1",
+    "node-fetch": "^2.7.0"
+  },
+  "description": "SnapCommit é uma ferramenta de linha de comando que automatiza a geração de mensagens de commit utilizando IA via OpenRouter. As mensagens seguem o padrão Conventional Commits com emojis e são geradas a partir das alterações preparadas no Git.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
