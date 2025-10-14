@@ -31,7 +31,7 @@ program
     "Gera e aplica automaticamente a mensagem de commit, com confirmação interativa"
   )
   .action(async () => {
-    const apiKey = ""; // substitua pela sua chave ou use variável de ambiente
+    const apiKey = "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"; // substitua pela sua chave ou use variável de ambiente
       
     if (!apiKey) {
       console.error("❌ Defina OPENROUTER_API_KEY no .env");
@@ -55,7 +55,7 @@ program
     }
 
     // 3) Prepara payload e chama o OpenRouter
-    const model = "google/gemini-2.5-flash-lite-preview-09-2025";
+    const model = "deepseek/deepseek-chat-v3.1:free";
     const payload = {
       model,
       messages: [
