@@ -22,7 +22,7 @@ gitbot -help
 
 ### Windows
 ```powershell
-$dest = "$env:USERPROFILEin"
+$dest = "$env:USERPROFILE/bin"
 New-Item -ItemType Directory -Force -Path $dest | Out-Null
 Invoke-WebRequest "https://github.com/frshaka/GitBot/releases/download/v2.0.1/gitbot-win-x64.exe" -OutFile "$dest\gitbot.exe"
 $path = [Environment]::GetEnvironmentVariable("Path", "User")
@@ -109,7 +109,7 @@ gitbot -help
 
 ### Windows
 ```powershell
-$dest = "$env:USERPROFILEin"
+$dest = "$env:USERPROFILE/bin"
 New-Item -ItemType Directory -Force -Path $dest | Out-Null
 Invoke-WebRequest "https://github.com/frshaka/GitBot/releases/download/v2.0.1/gitbot-win-x64.exe" -OutFile "$dest\gitbot.exe"
 $path = [Environment]::GetEnvironmentVariable("Path", "User")
