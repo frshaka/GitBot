@@ -15,8 +15,10 @@
   "scripts": {
     "prepare": "node -e \"try{require('fs').chmodSync('bin/gitbot.js',0o755)}catch(e){}\"",
     "release:clean": "node -e \"const fs=require('fs');try{fs.rmSync('dist',{recursive:true,force:true})}catch(e){};fs.mkdirSync('dist',{recursive:true})\"",
-    "build:bin": "pkg -t node18-linux-x64,node18-macos-x64,node18-win-x64 -o dist/gitbot bin/gitbot.js",
-    "test": "node -e \"console.log('ok')\""
+    "build:win":   "pkg -t node18-win-x64   -o dist/gitbot-win-x64.exe bin/gitbot.js",
+    "build:linux": "pkg -t node18-linux-x64 -o dist/gitbot-linux-x64     bin/gitbot.js",
+    "build:mac":   "pkg -t node18-macos-x64 -o dist/gitbot-macos-x64     bin/gitbot.js",
+    "build:bin":   "npm run release:clean && npm run build:win && npm run build:linux && npm run build:mac"
   },
   "keywords": [
     "git",
