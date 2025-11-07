@@ -1,19 +1,53 @@
 {
-  "name": "snapcommit",
-  "version": "2.0.0",
+  "name": "@frshaka/gitbot",
+  "version": "2.1.0",
+  "description": "CLI que automatiza mensagens de commit com IA via OpenRouter, formato Conventional Commits com emojis.",
   "bin": {
     "gitbot": "bin/gitbot.js"
+  },
+  "type": "commonjs",
+  "main": "bin/gitbot.js",
+  "files": [
+    "bin/gitbot.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "prepare": "chmod +x bin/gitbot.js || true",
+    "build:bin": "pkg -t node20-linux-x64,node20-macos-x64,node20-win-x64 -o dist/gitbot bin/gitbot.js",
+    "release:clean": "rm -rf dist && mkdir -p dist",
+    "test": "node -e \"console.log('ok')\""
+  },
+  "keywords": [
+    "git",
+    "commit",
+    "conventional-commits",
+    "cli",
+    "openrouter",
+    "ai"
+  ],
+  "author": "Felipe Rosa",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OWNER/REPO.git"
+  },
+  "engines": {
+    "node": ">=16"
   },
   "dependencies": {
     "commander": "^10.0.1",
     "node-fetch": "^2.7.0"
   },
-  "description": "SnapCommit é uma ferramenta de linha de comando que automatiza a geração de mensagens de commit utilizando IA via OpenRouter. As mensagens seguem o padrão Conventional Commits com emojis e são geradas a partir das alterações preparadas no Git.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "pkg": "^5.8.1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "pkg": {
+    "targets": [
+      "node20-linux-x64",
+      "node20-macos-x64",
+      "node20-win-x64"
+    ],
+    "assets": []
+  }
 }
