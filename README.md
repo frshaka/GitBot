@@ -1,4 +1,4 @@
-# GitBot
+# GitBot - PT-BR
 
 CLI para gerar mensagens de commit com IA via OpenRouter, seguindo Conventional Commits com emojis. Suporta configuração rápida de chave e modelo, e fluxo interativo de confirmação.
 
