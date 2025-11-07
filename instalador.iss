@@ -3,11 +3,11 @@
 ; ------------------------------
 
 [Setup]
-AppName=SnapCommit
+AppName=GitBotCommit
 AppVersion=1.0
-DefaultDirName={pf}\SnapCommit
-DefaultGroupName=SnapCommit
-OutputBaseFilename=setup-snapcommit
+DefaultDirName={pf}\GitBotCommit
+DefaultGroupName=GitBotCommit
+OutputBaseFilename=setup-GitbotCommit
 Compression=lzma
 SolidCompression=yes
 PrivilegesRequired=admin
@@ -16,11 +16,11 @@ PrivilegesRequired=admin
 Name: desktopicon; Description: "Criar atalho na área de trabalho"; GroupDescription: "Atalhos adicionais:"; Flags: unchecked
 
 [Files]
-Source: "D:\JOB\Pessoais\SnapCommit\dist\snap.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\JOB\Pessoais\SnapCommit\dist\gitbot.exe"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
-Name: "{group}\SnapCommit"; Filename: "{app}\snap.exe"
-Name: "{autodesktop}\SnapCommit"; Filename: "{app}\snap.exe"; Tasks: desktopicon
+Name: "{group}\GitbotCommit"; Filename: "{app}\gitbot.exe"
+Name: "{autodesktop}\GitbotCommit"; Filename: "{app}\gitbot.exe"; Tasks: desktopicon
 
 [Registry]
 Root: HKLM; Subkey: "SYSTEM\CurrentControlSet\Control\Session Manager\Environment"; \
