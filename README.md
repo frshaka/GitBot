@@ -116,12 +116,18 @@ gitbot -help
 
 ### Windows
 ```powershell
-$dest = "$env:USERPROFILE/bin"
+$dest = "$env:USERPROFILE\bin"
 New-Item -ItemType Directory -Force -Path $dest | Out-Null
 Invoke-WebRequest "https://github.com/frshaka/GitBot/releases/download/v2.0.1/gitbot-win-x64.exe" -OutFile "$dest\gitbot.exe"
 $path = [Environment]::GetEnvironmentVariable("Path", "User")
-if (-not $path.Split(";") -contains $dest) {
-  [Environment]::SetEnvironmentVariable("Path", "$path;$dest", "User")
+if (-not $path) {
+    $path = ""
+}
+$pathEntries = $path.Split(";", [System.StringSplitOptions]::RemoveEmptyEntries)
+if (-not ($pathEntries -contains $dest)) {
+    [Environment]::SetEnvironmentVariable("Path", "$path;$dest", "User")
+    # opcional, para este shell já enxergar o gitbot
+    $env:Path = "$env:Path;$dest"
 }
 # open a new terminal
 gitbot -help
